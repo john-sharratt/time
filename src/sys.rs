@@ -3,7 +3,7 @@
 pub use self::inner::*;
 
 #[cfg(any(
-    all(target_arch = "wasm32", not(target_os = "emscripten")),
+    all(any(target_arch = "wasm32", target_arch = "wasm64"), not(target_os = "emscripten")),
     target_env = "sgx"
 ))]
 mod common {
