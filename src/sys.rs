@@ -69,7 +69,7 @@ mod common {
     }
 }
 
-#[cfg(all(target_arch = "wasm32", not(any(target_os = "emscripten", target_os = "wasi"))))]
+#[cfg(all(any(target_arch = "wasm32", target_arch = "wasm64"), not(any(target_os = "emscripten", target_os = "wasi"))))]
 mod inner {
     use std::ops::{Add, Sub};
     use Tm;
